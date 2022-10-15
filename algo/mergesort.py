@@ -62,5 +62,5 @@ if __name__ == '__main__':
     timer_start = time.perf_counter()
     sorted(array_sample)
     time_elapsed = time.perf_counter() - timer_start
-    print(f'Array of size {len(array_sample)} using built-in sort in {time_elapsed:.6f}s.')
+    print(f'Array of size {len(array_sample)} sorted using built-in sort in {time_elapsed:.6f}s.')
 
