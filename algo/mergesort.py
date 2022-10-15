@@ -1,6 +1,11 @@
 """Mergesort prototype implementation in Python 3.7+.
 
 Time complexity: O(n*logn).
+
+Split an array on half, until the size of 1.
+Merge two sorted sub-arrays through element-by-element comparison.
+e.g. [1, 5], [3, 4]:
+1 < 3 -> [1], 5 > 3 -> [1, 3], 5 > 4 -> [1, 3, 4], append remaining 5 -> [1, 3, 4, 5].
 """
 from typing import Sequence
 
@@ -13,6 +18,7 @@ def mergesort(array: Sequence) -> Sequence:
     halfsize = len(array) // 2
     left_part = array[halfsize:]
     right_part = array[:halfsize]
+
     left_sorted = mergesort(left_part)
     right_sorted = mergesort(right_part)
 
@@ -22,6 +28,7 @@ def mergesort(array: Sequence) -> Sequence:
 def _merge(left_part: Sequence, right_part: Sequence) -> Sequence:
     merged = []
     while len(left_part) > 0 and len(right_part) > 0:
+        # Merge two sorted sub-arrays through element-by-element comparison.
         if left_part[0] <= right_part[0]:
             merged.append(left_part.pop(0))
         else:
