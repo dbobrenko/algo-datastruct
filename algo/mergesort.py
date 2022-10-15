@@ -5,7 +5,7 @@ Time complexity: O(n*logn).
 from typing import Sequence
 
 
-def mergesort(array: Sequence, ascending: bool = True) -> Sequence:
+def mergesort(array: Sequence) -> Sequence:
     """Sorts array through mergesort algorithm."""
     if len(array) <= 1:
         return array
